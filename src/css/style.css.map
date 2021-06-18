@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACvB;;AAED,AAAA,kBAAkB,CAAC;EACjB,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/partials/_base.scss",
+        "../sass/partials/_media.scss",
+        "../sass/partials/_layout.scss",
+        "../sass/partials/_form.scss",
+        "../sass/partials/_navbar.scss",
+        "../sass/partials/_buttons.scss",
+        "../sass/partials/_footer.scss",
+        "../sass/partials/_modals.scss",
+        "../sass/partials/_icons.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
