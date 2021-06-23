@@ -1,0 +1,42 @@
+// Guides Card
+
+.guide-type {
+  background-color: $neon-blue;
+  color: $white;
+}
+
+.guides-card {
+  border: 1px solid $neon-blue;
+}
+
+.guides-card h4 {
+  font-size: 25px;
+  font-family: $font-primary;
+  padding: 10px;
+}
+
+.guides-card h5 {
+  font-size: 18px;
+  font-family: $font-primary;
+  padding-bottom: 10px;
+  color: $black;
+}
+.guides-card p {
+  font-size: 15px;
+  font-family: $font-secondary;
+  margin-bottom: auto;
+}
+
+.card-buttons-section {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}

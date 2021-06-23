@@ -1,0 +1,192 @@
+// Search Button on Navbar
+
+.search-btn {
+  background-color: $neon-blue;
+  border: none;
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.search-btn:focus {
+  border: none !important;
+  outline: none !important;
+
+  box-shadow: none;
+  background-color: $black;
+}
+
+// Buttons on hero banner
+
+.hero-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.read-more-button {
+  margin-left: 24px;
+  padding: 8px;
+  width: 140px;
+  background-color: transparent;
+  border-color: $white;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $neon-blue;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.read-more-black {
+  font-size: 15px;
+  padding: 7px;
+  width: 120px;
+  background-color: $black;
+  border-color: $black;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $neon-blue;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.explore-button {
+  margin-left: 24px;
+  padding: 8px;
+  width: 140px;
+  background-color: $neon-blue;
+  border-color: $white;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.details-button {
+  padding: 8px;
+  width: 180px;
+  background-color: $black;
+  border-color: $white;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $light-black;
+    color: $white;
+    cursor: pointer;
+  }
+}
+.details-button a {
+  color: $white;
+  text-decoration: none;
+}
+.details-button2 {
+  padding: 8px;
+  width: 180px;
+  background-color: $green;
+  border-color: $white;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+  }
+}
+.details-button2 a {
+  color: $white;
+  text-decoration: none;
+}
+
+.view-all-btn {
+  padding: 8px;
+  width: 180px;
+  background-color: $neon-blue;
+  color: $white;
+  border: 2px solid $black;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+// Button on login form
+
+.login-button {
+  background-color: $neon-blue;
+  width: 130px;
+}
+
+// Sign out
+
+.sign-out-button {
+  background-color: red;
+  color: $white;
+  width: 90px;
+  height: 26px;
+  margin: 10px;
+  font-size: 11px;
+  font-family: $font-primary;
+  &:hover {
+    background-color: $black;
+  }
+}
+
+// Books section
+
+.buttons-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+// Details page button
+.go-back-button {
+  padding: 8px;
+  width: 180px;
+  background-color: $neon-blue;
+  color: $white;
+  border: 2px solid $black;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+  }
+}
+.close {
+  display: none ;
+}
+
+// Admin Page button
+
+.edit-text {
+
+  color:$blue;
+}
+
+.delete-button  {
+  padding:4px;
+  font-size: 12px;
+  background-color: $red;
+  color:$white;
+  margin-left: 10px;
+}

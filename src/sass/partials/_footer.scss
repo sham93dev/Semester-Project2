@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $black;
+  padding: 1px;
+  margin-top: auto;
+  width: 100%;
+}
+
+footer p {
+  color: $white;
+  font-size: 14px;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,49 @@
+.navbar {
+  background-color: $grey !important;
+}
+
+.brand-name {
+  font-size: 25px;
+
+  &:hover {
+    color: $neon-blue !important;
+  }
+}
+
+.nav-links a {
+  color: $black !important;
+  font-size: 17px;
+  font-family: $font-primary;
+  &:hover {
+    color: $neon-blue !important;
+  }
+}
+
+.search-bar-wrapper {
+  margin-right: 30px !important;
+  position: relative;
+  &:focus-within {
+    .auto-suggest {
+      display: block;
+    }
+  }
+}
+
+.auto-suggest {
+  display: none;
+  position: absolute;
+  background: white;
+  z-index: 3;
+  width: 320px;
+  list-style: none;
+  li {
+    padding: 10px;
+    &:not(:last-child) {
+      border-bottom: 1px solid black;
+    }
+    &:focus-within {
+      outline: 2px solid blue;
+      border: 0;
+    }
+  }
+}

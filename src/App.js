@@ -4,10 +4,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Navigation from "./components/layout/Navigation";
 import Home from "./pages/home/Home";
-import Details from "./pages/details/Details";
+import ContentDetails from "./pages/ContentDetails";
 import Admin from "./pages/admin/Admin";
 import About from "./pages/about/About";
 import Login from "./pages/login/Login";
+import Footer from "./components/layout/Footer";
+import Guides from "./pages/guides/Guides";
+import CreatePost from "./components/adminpage/posts/CreatePost";
+import UpdatePost from "./components/adminpage/posts/UpdatePost";
+import PostList from "./components/adminpage/posts/PostList";
+import AdminMenu from "./components/adminpage/AdminMenu";
 
 function App() {
   return (
@@ -19,8 +25,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/guides">
+              <Guides />
+            </Route>
             <Route path="/page/:id">
-              <Details />
+              <ContentDetails />
             </Route>
             <Route path="/login">
               <Login />
@@ -31,9 +40,22 @@ function App() {
             <Route exact path="/about">
               <About />
             </Route>
+            <Route path="/adminpage/" exact>
+              <AdminMenu />
+            </Route>
+            <Route path="/adminpage/posts/" exact>
+              <PostList />
+            </Route>
+            <Route path="/adminpage/posts/create">
+              <CreatePost />
+            </Route>
+            <Route path="/adminpage/posts/update/:id">
+              <UpdatePost />
+            </Route>
           </Switch>
         </div>
       </Router>
+      <Footer />
     </AuthProvider>
   );
 }

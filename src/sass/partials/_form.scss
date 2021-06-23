@@ -1,0 +1,51 @@
+// Search field on navbar
+
+input[type="text"] {
+  width: 320px !important;
+}
+
+// Login page
+
+.sign-in-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-container h1 {
+  text-align: center;
+  padding-top: 70px;
+  font-size: 55px;
+  font-family: $font-primary;
+}
+
+.sign-in-form-container {
+  background-color: $grey;
+  margin-top: 80px;
+  padding: 50px;
+  border-radius: 5px;
+}
+
+
+// Create post Form 
+
+.create-form-wrapper {
+  padding:40px;
+  background-color: $white;
+  
+}
+.col-design h3{
+text-align: center ;
+font-size: 40px;
+font-family: $font-primary;
+}
+
+.create-form {
+  background-color: $grey;
+  padding:40px;
+  border-radius: 20px;
+}

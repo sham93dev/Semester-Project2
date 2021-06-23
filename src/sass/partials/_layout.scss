@@ -2,8 +2,363 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
-.searchbar-wrapper {
-  float: left;
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+// Front Page
+// Hero-banner on front page
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+}
+
+.hero-banner h1 {
+  font-size: 55px;
+  margin-left: 22px;
+  color: $white;
+  font-family: $font-primary;
+}
+
+.hero-banner p {
+  font-size: 26px;
+  font-family: $font-secondary;
+  color: white;
+  margin-left: 20px;
+  width: 60%;
+}
+
+// Popular Guides section
+
+.popular-guides-wrapper {
+  text-align: center;
+  min-height: 80vh;
+  background-color: $grey;
+}
+.popular-guides-wrapper h2 {
+  font-size: 55px;
+  padding-top: 40px;
+  font-family: $font-primary;
+}
+
+.popular-guides-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  margin: 40px;
+
+  & img {
+    object-fit: cover;
+    height: 360px;
+  }
+}
+
+// Books section
+
+.books-section-wrapper {
+  display: flex;
+  min-height: 75vh;
+}
+
+.books-container {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+}
+
+.books-container2 {
+  flex: 2;
+  display: flex;
+  color: $white;
+  background-color: $light-black;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+.books-container2 p {
+  font-size: 18px;
+  font-family: $font-primary;
+  width: 88%;
+}
+.books-container2 h2 {
+  font-size: 58px;
+  font-family: $font-primary;
+  width: 88%;
+}
+
+// Video section
+
+.video-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 50vh;
+  z-index: 2;
+  margin: 0px;
+}
+
+.video-section h3 {
+  font-size: 60px;
+  font-family: $font-primary;
+  color: $white;
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  filter: brightness(80%);
+}
+
+// Guides Page
+
+.guides-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $sky-blue;
+}
+.guides-page-wrapper h1 {
+  font-size: 40px;
+  font-family: $font-primary;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.selection-container {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  z-index: 1;
+}
+
+.guides-wrapper {
+  text-align: center;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px;
+  gap: 40px;
+}
+
+.spinner-blue {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+// Guides Detail page
+.guides-detail-wrapper {
+  display: grid;
+}
+
+.guides-detail-info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  & img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
+  }
+}
+
+.guides-detail-info2 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  min-height: 43vh;
+}
+
+.category-wrapper {
+  background-color: $neon-blue;
+  color: $white;
+  text-align: center;
+  padding: 8px;
+  font-family: $font-primary;
+}
+
+.guides-detail-info2 h1 {
+  font-family: $font-primary;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-top: 40px;
+}
+
+.guides-detail-info2 p {
+  font-family: $font-secondary;
+  width: 90%;
+  padding-left: 20px;
+  font-size: 20px;
+}
+.guides-detail-info2 h5 {
+  font-family: $font-secondary;
+  width: 10%;
+  padding-left: 20px;
+  color: $white;
+  background: rgba($color: $black, $alpha: 1);
+}
+
+// About Page
+
+.about-page-wrapper {
+  display: flex;
+}
+
+.about-page-container {
+  flex-basis: 50%;
+}
+
+.about-page-container img {
+  height: 900px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-page-content {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page-content h1 {
+  margin-top: 89px;
+  text-align: center;
+  font-size: 69px;
+  padding-left: 20px;
+}
+
+.about-page-content p {
+  text-align: center;
+  font-size: 30px;
+  margin: 30px;
+}
+
+// Admin page
+
+.admin-page-dashboard {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  background-color: $menu;
+}
+.admin-page-dashboard h1 {
+  font-family: $font-primary;
+  color: $white;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.admin-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.admin-nav ul a {
+  color: $white;
+
+  &:hover {
+    color: $neon-blue;
+  }
+}
+
+.admin-nav-wrapper {
+  background-color: $menu;
+}
+
+.menu-posts-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 40px;
+  list-style-type: decimal;
+}
+
+
+
+.posts-arrange {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+}
+.posts-arrange h5, h6 {
+padding-left: 15px;
+}
+.posts-arrange h6 {
+font-size: 14px;
+margin-top: 10px;
+}
+
+.toast-body  {
+  object-fit: contain;
+  
+  
+}
+.toast-body img {
+  object-fit: cover !important;
+  height: 300px;
+  width: 100%;
+
+}
+
+.toast-body h4 {
+  margin-top: 10px;
+  font-family: $font-primary;
+}
+
+
+// Admin Dashboard 
+
+.dashboard-section h1{
+  text-align: center;
+  padding-top:60px;
+  font-size: 50px;
+  font-family: $font-primary;
+}
+.dashboard-section p{
+  text-align: center;
+  font-size: 20px;
+  margin-top:20px;
+  font-family: $font-secondary;
 }

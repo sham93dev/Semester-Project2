@@ -1,10 +1,14 @@
 import React from "react";
+import LoginForm from "./LoginForm";
 
 function Login() {
   return (
-    <div>
-      <h1>HEiii</h1>
-    </div>
+    <section className="sign-in-section">
+      <div className="sign-in-container">
+        <h1>Sign in for admin dashboard</h1>
+        <LoginForm />
+      </div>
+    </section>
   );
 }
 

@@ -1,11 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { BsFillPersonFill, BsFillPersonCheckFill } from "react-icons/bs";
+import { FaUserCog, FaUserCircle } from "react-icons/fa";
 import { Nav, Navbar, Button, Form, FormControl } from "react-bootstrap";
+import { BASE_URL } from "../../constants/api";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);
+  const [page, setPage] = useState([]);
+  const [filteredPages, setFilteredPages] = useState([]);
+  const [searchString, setSearchString] = useState("");
+  const [error, setError] = useState(null);
+
+  useEffect(function () {
+    async function fetchData() {
+      try {
+        const response = await axios.get(BASE_URL);
+        console.log(response.data);
+        setPage(response.data);
+      } catch (error) {
+        setError(error.toString());
+      }
+    }
+    fetchData();
+  }, []);
 
   const history = useHistory();
 
@@ -14,39 +34,54 @@ export default function Navigation() {
     history.push("/");
   }
 
+  const search = (event) => {
+    const string = event.target.value;
+    setSearchString(string);
+    setFilteredPages(page.filter((item) => item?.title.toLowerCase().includes(string.toLowerCase())));
+  };
+
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
+    <Navbar collapseOnSelect expand="lg">
+      <Navbar.Brand href="/" className="brand-name">
         Front<b>Wiki</b>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto nav-links">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#contact-page-wrapper">Guides</Nav.Link>
+          <Nav.Link href="/guides">Guides</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-          <div className="searchbar-wrapper mr-auto">
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-light">Search</Button>
-            </Form>
-          </div>
         </Nav>
+        <div className="search-bar-wrapper ml-auto">
+          <Form inline>
+            <FormControl type="text" placeholder="Search for guides.." onChange={search} className="mr-sm-1" />
+            <Button className="search-btn">Search</Button>
+          </Form>
+          {filteredPages.length > 0 && searchString.length > 0 && (
+            <ul className="auto-suggest">
+              {filteredPages.map((page) => (
+                <li key={page.id}>
+                  <Link to={`/page/${page.id}`}>{page.title}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         {auth ? (
           <>
             <Nav>
               <Nav.Link href="/admin">
-                <BsFillPersonCheckFill id="logedin" size={31} />
+                <FaUserCog id="admin-icon" size={29} />
               </Nav.Link>
-              <Button id="signout" onClick={logout} variant="danger" size="sm">
+              <button className="sign-out-button" onClick={logout}>
                 Sign out
-              </Button>
+              </button>
             </Nav>
           </>
         ) : (
           <Nav>
             <Nav.Link href="/login">
-              <BsFillPersonFill size={31} />
+              <FaUserCircle id="login-icon" size={31} />
             </Nav.Link>
           </Nav>
         )}
